@@ -1,0 +1,16 @@
+##SMR analysis
+
+cd..
+cd smr_win
+
+#COVID-19 susceptibility 
+.\SMR_x64.exe --bfile ../SMR/1000G.EUR.QC --gwas-summary ../SMR/COVID19_C2_gwas.ma --beqtl-summary ../SMR/blood_eqtl --maf 0.01 --out ../SMR/blood_C2_smr --thread-num 10
+.\SMR_x64.exe --bfile ../SMR/1000G.EUR.QC --gwas-summary ../SMR/COVID19_C2_gwas.ma --beqtl-summary ../SMR/Adipose_Subcutaneous_eqtl --maf 0.01 --out ../SMR/Adipose_Subcutaneous_C2_smr --thread-num 10
+
+#COVID-19 hospitalization
+.\SMR_x64.exe --bfile ../SMR/1000G.EUR.QC --gwas-summary ../SMR/COVID19_B1_gwas.ma --beqtl-summary ../SMR/blood_eqtl --maf 0.01 --out ../SMR/blood_B1_smr --thread-num 10
+.\SMR_x64.exe --bfile ../SMR/1000G.EUR.QC --gwas-summary ../SMR/COVID19_B1_gwas.ma --beqtl-summary ../SMR/Adipose_Subcutaneous_eqtl --maf 0.01 --out ../SMR/Adipose_Subcutaneous_B1_smr --thread-num 10
+
+#COVID-19 very severe disease
+.\SMR_x64.exe --bfile ../SMR/1000G.EUR.QC --gwas-summary ../SMR/COVID19_A1_gwas.ma --beqtl-summary ../SMR/blood_eqtl --maf 0.01 --out ../SMR/blood_A1_smr --thread-num 10
+.\SMR_x64.exe --bfile ../SMR/1000G.EUR.QC --gwas-summary ../SMR/COVID19_A1_gwas.ma --beqtl-summary ../SMR/Adipose_Subcutaneous_eqtl --maf 0.01 --out ../SMR/Adipose_Subcutaneous_A1_smr --thread-num 10

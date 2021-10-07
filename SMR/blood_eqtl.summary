@@ -1,0 +1,12 @@
+cis-window:	2000Kb
+trans-window:	1000Kb
+p-value threshold of trans:	5.000000e-08
+p-value threshold of others:	1.000000e-05
+
+cis region is indicated by [Chr, Start bp, End bp, nsnp];
+trans region is indicated by <Chr, Start bp, End bp, nsnp>;
+the number of other SNPs selected is indicated by (NumSNPs beyond cis and trans).
+
+{ProbeID, ProbeChr, ProbeBP}	[Chr,cis_startBP,cis_endBP,NumSNPs]	<Chr,trans_startBP,trans_endBP,NumSNPs>	(NumSNPs)
+{ENSG00000169174.10,1,55517873}	[1,55487346,55666477,24]	<>	()
+{ENSG00000113161,5,74645041}	[5,74242002,75216636,921]	<>	()
