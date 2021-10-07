@@ -1,0 +1,4 @@
+SNP	chr	pos	beta.outcome	se.outcome	samplesize.outcome	pval.outcome	eaf.outcome	effect_allele.outcome	other_allele.outcome	outcome	id.outcome	originalname.outcome	outcome.deprecated	mr_keep.outcome	data_source.outcome
+rs2073547	7	44582331	0.034526	0.015757	1299010	0.02844	0.2291	G	A	COVID-19 (RELEASE 4) || id:ebi-a-GCST010780	ebi-a-GCST010780	COVID-19 (RELEASE 4)	COVID-19 (RELEASE 4) ||  || 	TRUE	igd
+rs217386	7	44600695	-0.031422	0.014011	1299010	0.0249098	0.3998	A	G	COVID-19 (RELEASE 4) || id:ebi-a-GCST010780	ebi-a-GCST010780	COVID-19 (RELEASE 4)	COVID-19 (RELEASE 4) ||  || 	TRUE	igd
+rs7791240	7	44602589	0.015946	0.022256	1299010	0.4737	0.1082	C	T	COVID-19 (RELEASE 4) || id:ebi-a-GCST010780	ebi-a-GCST010780	COVID-19 (RELEASE 4)	COVID-19 (RELEASE 4) ||  || 	TRUE	igd

@@ -1,0 +1,4 @@
+beta.exposure	pos.exposure	se.exposure	pval.exposure	chr.exposure	samplesize.exposure	id.exposure	SNP	effect_allele.exposure	other_allele.exposure	eaf.exposure	exposure	mr_keep.exposure	pval_origin.exposure	data_source.exposure	r2	f
+0.0425	44602589	0.0065	1.83802e-10	7	161845	ieu-a-300	rs7791240	C	T	0.09103	LDL cholesterol || id:ieu-a-300	TRUE	reported	igd	0.00029891103499875	48.3911232780465
+0.0485	44582331	0.0049	1.92309e-21	7	169889	ieu-a-300	rs2073547	G	A	0.1939	LDL cholesterol || id:ieu-a-300	TRUE	reported	igd	0.000735326475555	125.014335303185
+-0.0363	44600695	0.0038	1.20393e-19	7	173021	ieu-a-300	rs217386	A	G	0.4077	LDL cholesterol || id:ieu-a-300	TRUE	reported	igd	0.0006363934335198	110.178272203109

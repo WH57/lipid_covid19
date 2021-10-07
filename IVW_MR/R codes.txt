@@ -1,0 +1,117 @@
+##IVW-MR analysis
+
+library(readr)
+library(data.table)
+library(TwoSampleMR)
+library(MRPRESSO)
+
+##Exposure data
+HMGCR_gwas <- read.delim("../IVW_MR/HMGCR_gwas.txt", quote="")
+PCSK9_gwas <- read.delim("../IVW_MR/PCSK9_gwas.txt", quote="")
+NPC1L1_gwas <- read.delim("../IVW_MR/NPC1L1_gwas.txt", quote="")
+
+##Outcome data
+#COVID-19 susceptibility 
+COVID19_C2_HMGCR_gwas <- read.delim("../IVW_MR/COVID19_C2_HMGCR_gwas.txt", quote="")
+COVID19_C2_PCSK9_gwas <- read.delim("../IVW_MR/COVID19_C2_PCSK9_gwas.txt", quote="")
+COVID19_C2_NPC1L1_gwas <- read.delim("../IVW_MR/COVID19_C2_NPC1L1_gwas.txt", quote="")
+
+#COVID-19 hospitalization
+COVID19_B1_HMGCR_gwas <- read.delim("../IVW_MR/COVID19_B1_HMGCR_gwas.txt", quote="")
+COVID19_B1_PCSK9_gwas <- read.delim("../IVW_MR/COVID19_B1_PCSK9_gwas.txt", quote="")
+COVID19_B1_NPC1L1_gwas <- read.delim("../IVW_MR/COVID19_B1_NPC1L1_gwas.txt", quote="")
+
+#COVID-19 very severe disease
+COVID19_A1_HMGCR_gwas <- read.delim("../IVW_MR/COVID19_A1_HMGCR_gwas.txt", quote="")
+COVID19_A1_PCSK9_gwas <- read.delim("../IVW_MR/COVID19_A1_PCSK9_gwas.txt", quote="")
+COVID19_A1_NPC1L1_gwas <- read.delim("../IVW_MR/COVID19_A1_NPC1L1_gwas.txt", quote="")
+
+##MR analysis
+#HMGCR
+dat <- harmonise_data(HMGCR_gwas, COVID19_C2_HMGCR_gwas)
+res1 <- mr(dat)
+res1
+heterogeneity1<-mr_heterogeneity(dat)
+pleiotropy1<-mr_pleiotropy_test(dat)
+presso1<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+          OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+          SignifThreshold = 0.05)
+
+dat <- harmonise_data(HMGCR_gwas, COVID19_B1_HMGCR_gwas)
+res2 <- mr(dat)
+res2
+heterogeneity2<-mr_heterogeneity(dat)
+pleiotropy2<-mr_pleiotropy_test(dat)
+presso2<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
+dat <- harmonise_data(HMGCR_gwas, COVID19_A1_HMGCR_gwas)
+res3 <- mr(dat)
+res3
+heterogeneity3<-mr_heterogeneity(dat)
+pleiotropy3<-mr_pleiotropy_test(dat)
+presso3<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
+
+
+
+#PCSK9
+dat <- harmonise_data(PCSK9_gwas, COVID19_C2_PCSK9_gwas)
+res11 <- mr(dat)
+res11
+heterogeneity11<-mr_heterogeneity(dat)
+pleiotropy11<-mr_pleiotropy_test(dat)
+presso11<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
+dat <- harmonise_data(PCSK9_gwas, COVID19_B1_PCSK9_gwas)
+res12 <- mr(dat)
+res12
+heterogeneity12<-mr_heterogeneity(dat)
+pleiotropy12<-mr_pleiotropy_test(dat)
+presso12<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
+dat <- harmonise_data(PCSK9_gwas, COVID19_A1_PCSK9_gwas)
+res13 <- mr(dat)
+res13
+heterogeneity13<-mr_heterogeneity(dat)
+pleiotropy13<-mr_pleiotropy_test(dat)
+presso13<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
+
+#NPC1L1
+dat <- harmonise_data(NPC1L1_gwas, COVID19_C2_NPC1L1_gwas)
+res21 <- mr(dat)
+res21
+heterogeneity21<-mr_heterogeneity(dat)
+pleiotropy21<-mr_pleiotropy_test(dat)
+presso21<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
+dat <- harmonise_data(NPC1L1_gwas, COVID19_B1_NPC1L1_gwas)
+res22 <- mr(dat)
+res22
+heterogeneity22<-mr_heterogeneity(dat)
+pleiotropy22<-mr_pleiotropy_test(dat)
+presso22<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
+dat <- harmonise_data(NPC1L1_gwas, COVID19_A1_NPC1L1_gwas)
+res23 <- mr(dat)
+res23
+heterogeneity23<-mr_heterogeneity(dat)
+pleiotropy23<-mr_pleiotropy_test(dat)
+presso23<-mr_presso(BetaOutcome ="beta.outcome", BetaExposure = "beta.exposure", SdOutcome ="se.outcome", SdExposure = "se.exposure", 
+                   OUTLIERtest = TRUE,DISTORTIONtest = TRUE, data = dat, NbDistribution = 1000,  
+                   SignifThreshold = 0.05)
+
